@@ -59,7 +59,7 @@
                     <!-- Logo & Identitas Toko -->
                     <div class="flex items-center gap-3 min-w-0">
                         <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-goldRaya-400 to-goldRaya-600 flex items-center justify-center text-emeraldRaya-950 shadow-md overflow-hidden border border-goldRaya-300/50 shrink-0">
-                            <img id="nav-logo-img" src="" alt="Logo DF Sultan" class="w-full h-full object-cover hidden" onerror="handleImageFallback(this, 'nav-logo-fallback')">
+                            <img id="nav-logo-img" src="Banner Pagar depan_20261117_152034_0001.png" alt="Logo DF Sultan" class="w-full h-full object-cover hidden" onerror="handleImageFallback(this, 'nav-logo-fallback')">
                             <i id="nav-logo-fallback" class="fa-solid fa-moon text-lg"></i>
                         </div>
                         <div class="min-w-0">
