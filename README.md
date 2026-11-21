@@ -103,7 +103,7 @@
 
             <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 text-center">
                 <div class="mx-auto mb-5 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-emeraldRaya-950/80 border-2 border-goldRaya-400 shadow-xl flex items-center justify-center overflow-hidden">
-                    <img id="hero-logo-img" src="" alt="Logo Utama DF Sultan" class="w-full h-full object-cover hidden" onerror="handleImageFallback(this, 'hero-logo-fallback')">
+                    <img id="hero-logo-img" src="Banner Pagar depan_20261117_152034_0001.png" alt="Logo Utama DF Sultan" class="w-full h-full object-cover hidden" onerror="handleImageFallback(this, 'hero-logo-fallback')">
                     <i id="hero-logo-fallback" class="fa-solid fa-star-and-crescent text-3xl sm:text-4xl text-goldRaya-400"></i>
                 </div>
 
