@@ -1,15 +1,16 @@
+<!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DF Sultan - Pemesanan Kue Kering Idul Fitri</title>
+    <title>DF Sultan - Katalog & Pemesanan Kue Kering Idul Fitri</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome untuk Ikon -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
@@ -54,28 +55,32 @@
         <!-- Navbar Publik -->
         <nav class="sticky top-0 z-40 bg-emeraldRaya-950/95 backdrop-blur-md text-white border-b border-goldRaya-500/30 shadow-lg">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16 sm:h-20">
+                <div class="flex justify-between items-center h-16 sm:h-20 gap-2">
                     <!-- Logo & Nama Toko -->
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
                         <div id="nav-logo-container" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-goldRaya-400 to-goldRaya-600 flex items-center justify-center text-emeraldRaya-950 shadow-md overflow-hidden border border-goldRaya-300/50 shrink-0">
                             <i class="fa-solid fa-moon text-lg"></i>
                         </div>
-                        <div>
-                            <span id="nav-store-name" class="font-serif font-bold text-base sm:text-xl tracking-wide text-goldRaya-400 block leading-tight">Berkah Raya Cookies</span>
-                            <span id="nav-store-subtitle" class="text-[11px] sm:text-xs text-emerald-200/80 block line-clamp-1">Sajian Istimewa Idul Fitri</span>
+                        <div class="min-w-0">
+                            <span id="nav-store-name" class="font-serif font-bold text-base sm:text-xl tracking-wide text-goldRaya-400 block leading-tight truncate">DF Sultan</span>
+                            <span id="nav-store-subtitle" class="text-[11px] sm:text-xs text-emerald-200/80 block truncate">Produksi Malang - Turen • @DF_Sultan</span>
                         </div>
                     </div>
 
-                    <!-- Tombol Aksi Cepat -->
-                    <div class="flex items-center gap-2 sm:gap-3">
-                        <a href="#katalog-kue" class="hidden sm:inline-block px-3 py-2 text-xs sm:text-sm font-medium text-emerald-100 hover:text-goldRaya-300 transition">
+                    <!-- Tombol Aksi Cepat & Akses Admin -->
+                    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+                        <a href="#katalog-kue" class="hidden md:inline-block px-3 py-2 text-xs sm:text-sm font-medium text-emerald-100 hover:text-goldRaya-300 transition">
                             Katalog Kue
                         </a>
-                        <a href="#form-pemesanan" class="px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-goldRaya-400 to-goldRaya-500 text-emeraldRaya-950 hover:from-goldRaya-300 hover:to-goldRaya-400 shadow-md transition-all flex items-center gap-2">
+                        <a href="#form-pemesanan" class="px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-goldRaya-400 to-goldRaya-500 text-emeraldRaya-950 hover:from-goldRaya-300 hover:to-goldRaya-400 shadow-md transition-all flex items-center gap-1.5 sm:gap-2">
                             <i class="fa-solid fa-basket-shopping"></i>
                             <span>Form Pesan</span>
                             <span id="nav-cart-badge" class="hidden px-1.5 py-0.5 text-[10px] rounded-full bg-emeraldRaya-950 text-goldRaya-300 font-bold">0</span>
                         </a>
+                        <button type="button" id="btn-open-admin-nav" onclick="openAdminAccess()" class="px-3.5 py-2 sm:py-2.5 rounded-xl bg-emeraldRaya-900 hover:bg-emeraldRaya-800 border border-goldRaya-500/40 text-goldRaya-300 text-xs sm:text-sm font-semibold transition flex items-center gap-1.5 shadow-sm cursor-pointer" title="Buka Mode Admin">
+                            <i class="fa-solid fa-lock"></i>
+                            <span>Admin</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -83,9 +88,9 @@
 
         <!-- Hero Section Nuansa Ramadhan & Idul Fitri -->
         <header class="relative bg-gradient-to-b from-emeraldRaya-950 via-emeraldRaya-900 to-emeraldRaya-800 text-white overflow-hidden">
-            <!-- Gambar Banner dari Pengaturan Admin -->
-            <div id="hero-bg-image-wrapper" class="absolute inset-0 opacity-25 pointer-events-none hidden">
-                <img id="hero-bg-image" src="" alt="Banner Toko" class="w-full h-full object-cover">
+            <!-- Gambar Latar Belakang Hero (Tanpa tulisan alt teks jika file tidak ditemukan) -->
+            <div id="hero-bg-image-wrapper" class="absolute inset-0 opacity-20 pointer-events-none hidden">
+                <img id="hero-bg-image" src="" alt="" onerror="this.style.display='none'; this.parentElement.classList.add('hidden');" class="w-full h-full object-cover">
             </div>
 
             <!-- Dekorasi Ornamen Islami -->
@@ -119,7 +124,7 @@
                 
                 <!-- Bio Toko -->
                 <p id="hero-bio" class="max-w-2xl mx-auto text-sm sm:text-lg text-emerald-100/90 mb-8 leading-relaxed">
-                    Kue kering buatan rumah dengan mentega pilihan, resep warisan keluarga, dan tanpa bahan pengawet. Cocok untuk sajian meja tamu maupun hampers orang tersayang.
+                    Kue kering buatan rumah pilihan DF Sultan (Nastar Nanas, Kastengel Keju, Thumbprint, dan Lidah Kucing Keju) dengan mentega berkualitas, resep istimewa, dan tanpa bahan pengawet.
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
@@ -145,16 +150,16 @@
                 
                 <!-- Filter Kategori -->
                 <div class="flex flex-wrap gap-2" id="category-filters">
-                    <button onclick="filterCategory('Semua')" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-emeraldRaya-900 text-white transition">Semua</button>
-                    <button onclick="filterCategory('Klasik')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-stone-600 border border-stone-200 hover:border-emeraldRaya-600 transition">Klasik</button>
-                    <button onclick="filterCategory('Cokelat & Keju')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-stone-600 border border-stone-200 hover:border-emeraldRaya-600 transition">Cokelat & Keju</button>
-                    <button onclick="filterCategory('Paket Hampers')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-stone-600 border border-stone-200 hover:border-emeraldRaya-600 transition">Paket Hampers</button>
+                    <button type="button" onclick="filterCategory('Semua')" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-emeraldRaya-900 text-white transition">Semua</button>
+                    <button type="button" onclick="filterCategory('Klasik')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-stone-600 border border-stone-200 hover:border-emeraldRaya-600 transition">Klasik</button>
+                    <button type="button" onclick="filterCategory('Cokelat & Keju')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-stone-600 border border-stone-200 hover:border-emeraldRaya-600 transition">Cokelat & Keju</button>
+                    <button type="button" onclick="filterCategory('Paket Hampers')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-stone-600 border border-stone-200 hover:border-emeraldRaya-600 transition">Paket Hampers</button>
                 </div>
             </div>
 
             <!-- Grid Daftar Kue -->
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Diisi lewat JS -->
+                <!-- Dirender via JS -->
             </div>
 
             <div id="empty-state" class="hidden text-center py-16 bg-white rounded-3xl border border-dashed border-stone-300">
@@ -264,18 +269,18 @@
             </div>
         </section>
 
-        <!-- Footer dengan Tombol Akses Admin Tersembunyi/Rapi -->
+        <!-- Footer -->
         <footer class="bg-emeraldRaya-950 text-emerald-200/80 py-10 border-t border-goldRaya-500/20">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
                 <div>
-                    <p id="footer-store-name" class="font-serif font-bold text-lg text-goldRaya-400">Berkah Raya Cookies</p>
+                    <p id="footer-store-name" class="font-serif font-bold text-lg text-goldRaya-400">DF Sultan</p>
                     <p id="footer-store-bio" class="text-xs mt-1 max-w-md text-emerald-200/70">Selamat Menunaikan Ibadah Puasa & Hari Raya Idul Fitri. Terima kasih telah mempercayakan sajian Lebaran Anda kepada kami.</p>
                 </div>
                 <div class="flex flex-wrap items-center justify-center gap-2.5">
-                    <button onclick="chatDirectWhatsApp()" class="px-4 py-2.5 rounded-xl bg-green-600 hover:bg-green-500 text-white text-xs sm:text-sm font-semibold transition flex items-center gap-2 shadow-md">
+                    <button type="button" onclick="chatDirectWhatsApp()" class="px-4 py-2.5 rounded-xl bg-green-600 hover:bg-green-500 text-white text-xs sm:text-sm font-semibold transition flex items-center gap-2 shadow-md">
                         <i class="fa-brands fa-whatsapp text-base"></i> Chat WhatsApp Penjual
                     </button>
-                    <button onclick="openAdminAccess()" class="px-3.5 py-2.5 rounded-xl bg-emeraldRaya-900 hover:bg-emeraldRaya-800 border border-goldRaya-500/30 text-goldRaya-300 text-xs font-semibold transition flex items-center gap-1.5" title="Kelola Toko (Khusus Pemilik)">
+                    <button type="button" onclick="openAdminAccess()" class="px-3.5 py-2.5 rounded-xl bg-emeraldRaya-900 hover:bg-emeraldRaya-800 border border-goldRaya-500/30 text-goldRaya-300 text-xs font-semibold transition flex items-center gap-1.5" title="Kelola Toko (Khusus Pemilik)">
                         <i class="fa-solid fa-lock"></i> Admin
                     </button>
                 </div>
@@ -284,29 +289,30 @@
     </div>
 
     <!-- ===================================================================== -->
-    <!-- TAMPILAN 2: DASHBOARD KHUSUS ADMIN (TERHUBUNG LANGSUNG KE HALAMAN INI)-->
+    <!-- TAMPILAN 2: DASHBOARD KHUSUS ADMIN (100% BERFUNGSI & TERHUBUNG)       -->
     <!-- ===================================================================== -->
     <div id="admin-view" class="hidden min-h-screen bg-stone-100">
         <!-- Navbar Admin -->
         <nav class="sticky top-0 z-40 bg-emeraldRaya-950 text-white border-b border-goldRaya-500/40 shadow-md">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
                 <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-xl bg-goldRaya-500 text-emeraldRaya-950 flex items-center justify-center font-bold">
+                    <div class="w-9 h-9 rounded-xl bg-goldRaya-500 text-emeraldRaya-950 flex items-center justify-center font-bold shrink-0">
                         <i class="fa-solid fa-crown"></i>
                     </div>
                     <div>
-                        <span class="font-bold text-sm sm:text-base text-goldRaya-400 block leading-none">Mode Admin Toko</span>
-                        <span class="text-[11px] text-emerald-200">Perubahan langsung tampil di halaman pemesanan</span>
+                        <span class="font-bold text-sm sm:text-base text-goldRaya-400 block leading-none">Mode Admin DF Sultan</span>
+                        <span class="text-[11px] text-emerald-200 hidden sm:inline">Perubahan otomatis tampil di halaman pemesanan</span>
                     </div>
                 </div>
 
                 <div class="flex items-center gap-2 sm:gap-3">
-                    <button onclick="switchToPublicView()" class="px-4 py-2 rounded-xl bg-goldRaya-500 hover:bg-goldRaya-400 text-emeraldRaya-950 text-xs sm:text-sm font-bold shadow transition flex items-center gap-1.5">
+                    <button type="button" onclick="switchToPublicView()" class="px-3.5 py-2 rounded-xl bg-goldRaya-500 hover:bg-goldRaya-400 text-emeraldRaya-950 text-xs sm:text-sm font-bold shadow transition flex items-center gap-1.5">
                         <i class="fa-solid fa-eye"></i>
-                        <span>Lihat Halaman Pemesanan</span>
+                        <span>Lihat Halaman Pembeli</span>
                     </button>
-                    <button onclick="logoutAdmin()" class="px-3 py-2 rounded-xl bg-red-600/90 hover:bg-red-600 text-white text-xs font-semibold transition flex items-center gap-1.5" title="Keluar & Kunci Mode Admin">
+                    <button type="button" onclick="logoutAdmin()" class="px-3 py-2 rounded-xl bg-red-600/90 hover:bg-red-600 text-white text-xs font-semibold transition flex items-center gap-1.5" title="Keluar & Kunci Mode Admin">
                         <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="hidden sm:inline">Keluar</span>
                     </button>
                 </div>
             </div>
@@ -314,25 +320,25 @@
 
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
             
-            <!-- Kotak Link Pemesanan Terhubung -->
+            <!-- Kotak Link Pemesanan & Simpan Permanen HTML -->
             <div class="bg-gradient-to-r from-emeraldRaya-900 to-emeraldRaya-800 rounded-3xl p-5 sm:p-6 text-white shadow-md border border-goldRaya-500/30 space-y-3">
-                <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3">
                     <div>
                         <div class="flex items-center gap-2 mb-1">
-                            <span class="inline-block px-2.5 py-0.5 rounded-full bg-goldRaya-400/20 text-goldRaya-300 text-[11px] font-bold">Terhubung 1 File</span>
+                            <span class="inline-block px-2.5 py-0.5 rounded-full bg-goldRaya-400/20 text-goldRaya-300 text-[11px] font-bold">Siap Dibagikan</span>
                             <span id="link-updated-badge" class="hidden px-2.5 py-0.5 rounded-full bg-green-500/20 text-green-300 text-[11px] font-bold">
                                 <i class="fa-solid fa-check-circle mr-1"></i>Perubahan Tersimpan!
                             </span>
                         </div>
-                        <h2 class="font-serif text-lg sm:text-xl font-bold">Bagikan Link Website Ini ke Pembeli</h2>
-                        <p class="text-xs text-emerald-100/80">Saat pembeli membuka link ini, mereka otomatis melihat halaman pemesanan (bukan halaman admin).</p>
+                        <h2 class="font-serif text-lg sm:text-xl font-bold">Bagikan Link atau Simpan Permanen File HTML</h2>
+                        <p class="text-xs text-emerald-100/80">Gunakan <strong>Simpan Permanen (Unduh HTML)</strong> agar seluruh foto yang Anda unggah tertanam permanen di file website.</p>
                     </div>
-                    <div class="flex flex-wrap gap-2 w-full md:w-auto shrink-0">
-                        <button onclick="switchToPublicView()" class="flex-1 md:flex-none px-4 py-2.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2 border border-white/20">
-                            <i class="fa-solid fa-store"></i> Buka Halaman Pembeli
-                        </button>
-                        <button onclick="copyShareableCustomerLink()" class="flex-1 md:flex-none px-4 py-2.5 rounded-xl bg-goldRaya-400 hover:bg-goldRaya-300 text-emeraldRaya-950 font-bold text-xs sm:text-sm shadow transition flex items-center justify-center gap-2">
+                    <div class="flex flex-wrap gap-2 w-full lg:w-auto shrink-0">
+                        <button type="button" onclick="copyShareableCustomerLink()" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-goldRaya-400 hover:bg-goldRaya-300 text-emeraldRaya-950 font-bold text-xs sm:text-sm shadow transition flex items-center justify-center gap-2">
                             <i class="fa-solid fa-copy"></i> Salin Link Pembeli
+                        </button>
+                        <button type="button" onclick="exportUpdatedHtmlFile()" class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow transition flex items-center justify-center gap-2 border border-emerald-400/30">
+                            <i class="fa-solid fa-download"></i> Simpan Permanen (Unduh HTML)
                         </button>
                     </div>
                 </div>
@@ -346,13 +352,13 @@
 
             <!-- Tab Navigasi Admin -->
             <div class="flex flex-wrap gap-2 bg-white p-2 rounded-2xl shadow-sm border border-stone-200">
-                <button onclick="switchAdminTab('products')" id="tab-btn-products" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl bg-emeraldRaya-900 text-white font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                <button type="button" onclick="switchAdminTab('products')" id="tab-btn-products" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl bg-emeraldRaya-900 text-white font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2">
                     <i class="fa-solid fa-cookie"></i> Kelola & Post Kue
                 </button>
-                <button onclick="switchAdminTab('profile')" id="tab-btn-profile" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl text-stone-600 hover:bg-stone-100 font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                <button type="button" onclick="switchAdminTab('profile')" id="tab-btn-profile" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl text-stone-600 hover:bg-stone-100 font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2">
                     <i class="fa-solid fa-store"></i> Edit Bio, Logo & Gambar
                 </button>
-                <button onclick="switchAdminTab('security')" id="tab-btn-security" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl text-stone-600 hover:bg-stone-100 font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2">
+                <button type="button" onclick="switchAdminTab('security')" id="tab-btn-security" class="flex-1 sm:flex-none px-5 py-2.5 rounded-xl text-stone-600 hover:bg-stone-100 font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2">
                     <i class="fa-solid fa-shield-halved"></i> Ubah PIN Admin
                 </button>
             </div>
@@ -362,14 +368,14 @@
                 <div class="bg-white rounded-3xl p-6 shadow-sm border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
                         <h3 class="font-serif text-xl sm:text-2xl font-bold text-emeraldRaya-950">Daftar Kue Kering Toko Anda</h3>
-                        <p class="text-xs sm:text-sm text-stone-500">Tambah kue baru, ubah harga, ganti foto, atau hapus varian.</p>
+                        <p class="text-xs sm:text-sm text-stone-500">Tambah kue baru, ubah harga, upload foto permanen, atau hapus varian.</p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <button onclick="openProductModal()" class="px-5 py-3 rounded-xl bg-gradient-to-r from-emeraldRaya-800 to-emeraldRaya-900 hover:from-emeraldRaya-700 hover:to-emeraldRaya-800 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center gap-2">
+                        <button type="button" onclick="openProductModal()" class="px-5 py-3 rounded-xl bg-gradient-to-r from-emeraldRaya-800 to-emeraldRaya-900 hover:from-emeraldRaya-700 hover:to-emeraldRaya-800 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center gap-2">
                             <i class="fa-solid fa-plus"></i> Post Kue Baru
                         </button>
-                        <button onclick="resetDefaultData()" class="px-4 py-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold text-xs transition flex items-center gap-1.5">
-                            <i class="fa-solid fa-rotate-left"></i> Reset Contoh
+                        <button type="button" onclick="resetDefaultData()" class="px-4 py-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold text-xs transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-rotate-left"></i> Reset Default
                         </button>
                     </div>
                 </div>
@@ -379,12 +385,12 @@
                 </div>
             </div>
 
-            <!-- TAB 2: EDIT BIO, LOGO, GAMBAR BANNER & WHATSAPP -->
+            <!-- TAB 2: EDIT BIO, LOGO, GAMBAR LATAR & WHATSAPP -->
             <div id="admin-tab-profile" class="hidden">
                 <form onsubmit="saveFullStoreProfile(event)" class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-stone-200 space-y-6">
                     <div class="border-b border-stone-100 pb-4">
-                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-emeraldRaya-950">Edit Semua Identitas, Logo & Bio Toko</h3>
-                        <p class="text-xs sm:text-sm text-stone-500">Ubah nama toko, bio, logo, gambar latar belakang, dan nomor WhatsApp penerima order.</p>
+                        <h3 class="font-serif text-xl sm:text-2xl font-bold text-emeraldRaya-950">Edit Identitas, Logo & Bio Toko</h3>
+                        <p class="text-xs sm:text-sm text-stone-500">Ubah nama toko, slogan, bio, logo, gambar latar belakang, dan nomor WhatsApp penerima order.</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -434,21 +440,22 @@
                         </div>
                     </div>
 
-                    <!-- Edit Banner Utama -->
+                    <!-- Edit Gambar Latar Belakang Hero -->
                     <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
                         <h4 class="font-bold text-sm text-emeraldRaya-950 flex items-center gap-2">
-                            <i class="fa-solid fa-panorama text-goldRaya-600"></i> Gambar Latar Belakang Banner Utama
+                            <i class="fa-solid fa-panorama text-goldRaya-600"></i> Gambar Latar Belakang Utama
                         </h4>
                         <div class="flex flex-wrap gap-2">
                             <label class="cursor-pointer px-4 py-2 rounded-xl bg-emeraldRaya-800 hover:bg-emeraldRaya-700 text-white text-xs font-semibold transition inline-flex items-center gap-2">
-                                <i class="fa-solid fa-upload"></i> Upload Foto Banner
-                                <input type="file" accept="image/*" onchange="handleImageUpload(event, 'edit-banner-url', null)" class="hidden">
+                                <i class="fa-solid fa-upload"></i> Upload Foto Latar Permanen
+                                <input type="file" accept="image/*" onchange="handleImageUpload(event, 'edit-banner-url', 'preview-banner-box')" class="hidden">
                             </label>
-                            <button type="button" onclick="document.getElementById('edit-banner-url').value=''" class="px-3 py-2 rounded-xl bg-stone-200 hover:bg-stone-300 text-stone-700 text-xs font-semibold transition">
-                                Hapus Banner
+                            <button type="button" onclick="clearImageField('edit-banner-url', 'preview-banner-box', 'banner')" class="px-3 py-2 rounded-xl bg-stone-200 hover:bg-stone-300 text-stone-700 text-xs font-semibold transition">
+                                Hapus Gambar Latar
                             </button>
                         </div>
-                        <input type="text" id="edit-banner-url" placeholder="Atau masukkan URL gambar banner..." class="w-full px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs focus:outline-none focus:border-emeraldRaya-600">
+                        <div id="preview-banner-box" class="hidden w-full h-32 rounded-xl overflow-hidden border border-stone-200 bg-stone-200"></div>
+                        <input type="text" id="edit-banner-url" oninput="updateBannerPreview(this.value)" placeholder="Atau masukkan URL gambar latar..." class="w-full px-3.5 py-2 rounded-xl bg-white border border-stone-200 text-xs focus:outline-none focus:border-emeraldRaya-600">
                     </div>
 
                     <!-- Edit Judul & Bio -->
@@ -494,33 +501,40 @@
         </div>
     </div>
 
-    <!-- MODAL LOGIN PIN ADMIN -->
+    <!-- ===================================================================== -->
+    <!-- MODAL LOGIN PIN ADMIN                                                 -->
+    <!-- ===================================================================== -->
     <div id="admin-pin-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4">
         <div class="bg-white rounded-3xl max-w-sm w-full p-7 shadow-2xl border border-goldRaya-500/30 text-center relative">
-            <button onclick="closeAdminPinModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center transition">
+            <button type="button" onclick="closeAdminPinModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center transition">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-emeraldRaya-950 text-goldRaya-400 flex items-center justify-center text-xl shadow-md">
                 <i class="fa-solid fa-crown"></i>
             </div>
             <h3 class="font-serif text-xl font-bold text-emeraldRaya-950 mb-1">Akses Khusus Admin</h3>
-            <p class="text-xs text-stone-500 mb-5">Masukkan PIN Pemilik Toko untuk mengelola produk, logo, dan bio. (PIN Awal: <strong>1234</strong>)</p>
+            <p class="text-xs text-stone-500 mb-5">Masukkan PIN Pemilik Toko untuk mengelola produk, foto, logo, dan bio. (PIN Default: <strong>1234</strong>)</p>
 
             <form onsubmit="verifyAdminPin(event)" class="space-y-3">
                 <input type="password" id="pin-login-input" required placeholder="Masukkan PIN (1234)" class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-center text-lg font-bold tracking-widest focus:outline-none focus:ring-2 focus:ring-emeraldRaya-600">
                 <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-emeraldRaya-800 to-emeraldRaya-950 hover:from-emeraldRaya-700 hover:to-emeraldRaya-900 text-white font-bold text-sm shadow-md transition">
                     Masuk ke Mode Admin
                 </button>
+                <button type="button" onclick="fillDefaultPinAndLogin()" class="w-full py-2 rounded-xl bg-emeraldRaya-50 hover:bg-emeraldRaya-100 text-emeraldRaya-800 text-xs font-semibold transition">
+                    Gunakan PIN Default (1234)
+                </button>
             </form>
         </div>
     </div>
 
-    <!-- MODAL TAMBAH / EDIT PRODUK KUE -->
+    <!-- ===================================================================== -->
+    <!-- MODAL TAMBAH / EDIT PRODUK KUE                                        -->
+    <!-- ===================================================================== -->
     <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/65 backdrop-blur-sm p-4">
         <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-stone-100 max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center pb-4 border-b border-stone-100 mb-5">
                 <h3 id="modal-title" class="font-serif text-xl sm:text-2xl font-bold text-emeraldRaya-950">Post Kue Kering Baru</h3>
-                <button onclick="closeProductModal()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center transition">
+                <button type="button" onclick="closeProductModal()" class="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center transition">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
@@ -530,17 +544,17 @@
                 
                 <div>
                     <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Nama Kue Kering <span class="text-red-500">*</span></label>
-                    <input type="text" id="prod-name" required placeholder="Contoh: Nastar Wisman Lumer" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-emeraldRaya-600">
+                    <input type="text" id="prod-name" required placeholder="Contoh: Nastar Nanas Spesial" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-emeraldRaya-600">
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Harga (Rp) <span class="text-red-500">*</span></label>
-                        <input type="number" id="prod-price" required min="1000" step="500" placeholder="Contoh: 85000" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-emeraldRaya-600">
+                        <input type="number" id="prod-price" required min="1000" step="500" placeholder="Contoh: 45000" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-emeraldRaya-600">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Ukuran / Kemasan <span class="text-red-500">*</span></label>
-                        <input type="text" id="prod-weight" required placeholder="Contoh: Toples 500gr" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-emeraldRaya-600">
+                        <input type="text" id="prod-weight" required placeholder="Contoh: Toples 250gr" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-emeraldRaya-600">
                     </div>
                 </div>
 
@@ -555,19 +569,23 @@
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Label Badge (Opsional)</label>
-                        <input type="text" id="prod-badge" placeholder="Contoh: Best Seller / Baru" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-emeraldRaya-600">
+                        <input type="text" id="prod-badge" placeholder="Contoh: Best Seller / Hemat" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-emeraldRaya-600">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Foto Kue Kering (Upload atau URL)</label>
-                    <div class="flex gap-2 mb-2">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-stone-600 mb-1">Foto Kue Kering (Upload Permanen atau URL)</label>
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
                         <label class="cursor-pointer px-3.5 py-2 rounded-xl bg-emeraldRaya-50 hover:bg-emeraldRaya-100 text-emeraldRaya-800 border border-emeraldRaya-200 text-xs font-semibold transition inline-flex items-center gap-1.5">
                             <i class="fa-solid fa-camera"></i> Upload Foto dari Galeri
-                            <input type="file" accept="image/*" onchange="handleImageUpload(event, 'prod-image', null)" class="hidden">
+                            <input type="file" accept="image/*" onchange="handleImageUpload(event, 'prod-image', 'preview-prod-box')" class="hidden">
                         </label>
+                        <button type="button" onclick="clearImageField('prod-image', 'preview-prod-box', 'product')" class="px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-600 text-xs font-semibold transition">
+                            Hapus Foto
+                        </button>
                     </div>
-                    <input type="text" id="prod-image" placeholder="Atau tempel link URL gambar (https://...)" class="w-full px-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-emeraldRaya-600">
+                    <div id="preview-prod-box" class="hidden w-full h-36 mb-2 rounded-xl overflow-hidden border border-stone-200 bg-stone-100"></div>
+                    <input type="text" id="prod-image" oninput="updateProductImgPreview(this.value)" placeholder="Atau tempel link URL / nama file gambar..." class="w-full px-4 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-sm focus:outline-none focus:border-emeraldRaya-600">
                 </div>
 
                 <div>
@@ -583,7 +601,9 @@
         </div>
     </div>
 
-    <!-- Modal Konfirmasi Hapus -->
+    <!-- ===================================================================== -->
+    <!-- MODAL KONFIRMASI HAPUS                                                -->
+    <!-- ===================================================================== -->
     <div id="delete-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/65 backdrop-blur-sm p-4">
         <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl">
             <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-2xl">
@@ -592,88 +612,68 @@
             <h4 class="font-bold text-lg text-stone-800 mb-1">Hapus Kue Ini?</h4>
             <p class="text-sm text-stone-500 mb-6">Kue yang dihapus akan hilang dari daftar katalog website pemesanan.</p>
             <div class="flex gap-3">
-                <button onclick="closeDeleteModal()" class="flex-1 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold text-sm transition">Batal</button>
-                <button id="confirm-delete-btn" class="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold text-sm transition">Ya, Hapus</button>
+                <button type="button" onclick="closeDeleteModal()" class="flex-1 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold text-sm transition">Batal</button>
+                <button type="button" id="confirm-delete-btn" class="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold text-sm transition">Ya, Hapus</button>
             </div>
         </div>
     </div>
 
     <script>
         // =====================================================================
-        // DATA DEFAULT PRODUK & PROFIL TOKO
+        // DATA DEFAULT PRODUK & PROFIL TOKO (DF SULTAN)
         // =====================================================================
         const defaultProducts = [
             {
-                id: 'kue-1',
-                name: 'Nastar Klasik Wisman Lumer',
-                price: 95000,
-                weight: 'Toples 500gr',
+                id: 'kue-nastar',
+                name: 'Nastar Nanas Spesial',
+                price: 45000,
+                weight: 'Toples 250gr',
                 category: 'Klasik',
                 badge: 'Best Seller',
-                image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80',
-                desc: 'Adonan lembut dengan mentega Wisman asli, diisi selai nanas madu homemade yang manis legit dan lumer di mulut.'
+                image: '1001103667_2.jpg',
+                desc: 'Adonan lembut dengan mentega pilihan, tepung, telur, susu, diisi selai nanas homemade manis legit. Produksi Malang-Turen.'
             },
             {
-                id: 'kue-2',
-                name: 'Kastengel Keju Edam Spesial',
-                price: 105000,
-                weight: 'Toples 500gr',
+                id: 'kue-kastengel',
+                name: 'Kastengel Keju',
+                price: 45000,
+                weight: 'Toples 250gr',
                 category: 'Cokelat & Keju',
                 badge: 'Favorit',
-                image: 'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=800&q=80',
-                desc: 'Renyah gurih dengan perpaduan keju Edam tua dan taburan keju Cheddar panggang melimpah di setiap gigitan.'
+                image: '1001103668_2.jpg',
+                desc: 'Renyah gurih dengan keju pilihan, mentega, telur, susu, dan taburan keju melimpah. Produksi Malang-Turen.'
             },
             {
-                id: 'kue-3',
-                name: 'Putri Salju Mede Premium',
-                price: 85000,
-                weight: 'Toples 500gr',
+                id: 'kue-thumbprint',
+                name: 'Thumbprint Cookies',
+                price: 45000,
+                weight: 'Toples 250gr',
                 category: 'Klasik',
-                badge: '',
-                image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80',
-                desc: 'Kue bulan sabit lembut dengan campuran kacang mede panggang cincang, dibalut gula halus dingin yang manis pas.'
+                badge: 'Spesial',
+                image: '1001103666_2.jpg',
+                desc: 'Kukis renyah berbalut keju dengan isian selai stroberi manis segar di bagian tengah. Produksi Malang-Turen.'
             },
             {
-                id: 'kue-4',
-                name: 'Choco Mede Cookies',
-                price: 90000,
-                weight: 'Toples 500gr',
+                id: 'kue-lidah-kucing',
+                name: 'Lidah Kucing Keju Premium',
+                price: 40000,
+                weight: 'Toples 250gr',
                 category: 'Cokelat & Keju',
-                badge: 'Baru',
-                image: 'https://images.unsplash.com/photo-1618923850107-d1a234d7a73a?auto=format&fit=crop&w=800&q=80',
-                desc: 'Kukis cokelat pekat dengan topping kacang mede utuh panggang yang renyah. Sangat disukai anak-anak hingga dewasa.'
-            },
-            {
-                id: 'kue-5',
-                name: 'Hampers Mubarak 3 Toples',
-                price: 275000,
-                weight: 'Box Eksklusif (3 x 350gr)',
-                category: 'Paket Hampers',
-                badge: 'Hemat & Mewah',
-                image: 'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=800&q=80',
-                desc: 'Paket bingkisan Lebaran berisi Nastar, Kastengel, dan Putri Salju dalam box hijau emas eksklusif + gratis kartu ucapan.'
-            },
-            {
-                id: 'kue-6',
-                name: 'Lidah Kucing Rainbow / Original',
-                price: 75000,
-                weight: 'Toples 400gr',
-                category: 'Klasik',
-                badge: '',
-                image: 'https://images.unsplash.com/photo-1548365328-8c6db3220e4c?auto=format&fit=crop&w=800&q=80',
-                desc: 'Kue tipis yang super renyah, ringan, dan wangi susu mentega. Cocok untuk teman minum teh hangat saat silaturahmi.'
+                badge: 'Hemat',
+                image: '1001103665_2.jpg',
+                desc: 'Kue tipis super renyah, ringan, dan wangi susu mentega dengan taburan keju gurih. Produksi Malang-Turen.'
             }
         ];
 
         const defaultSettings = {
-            storeName: 'Berkah Raya Cookies',
-            storeSubtitle: 'Sajian Istimewa Idul Fitri',
+            storeName: 'DF Sultan',
+            storeSubtitle: 'Produksi Malang - Turen • @DF_Sultan',
             waNumber: '08819665411',
             tagline: 'Open Pre-Order Ramadhan & Idul Fitri • Homemade & Premium',
             heroTitle: 'Hadirkan Kehangatan Hari Kemenangan',
-            storeBio: 'Kue kering buatan rumah dengan mentega pilihan, resep warisan keluarga, dan tanpa bahan pengawet. Cocok untuk sajian meja tamu maupun hampers orang tersayang.',
+            storeBio: 'Kue kering buatan rumah pilihan DF Sultan (Nastar Nanas, Kastengel Keju, Thumbprint, dan Lidah Kucing Keju) dengan mentega berkualitas, resep istimewa, dan tanpa bahan pengawet.',
             logoUrl: '',
-            bannerUrl: ''
+            bannerUrl: '1001103667_2.jpg'
         };
 
         let products = [];
@@ -696,7 +696,7 @@
             refreshGeneratedIndexLink(false);
         });
 
-        // Muat data dari URL Hash (jika dibuka dari link share) atau localStorage
+        // Muat data dari URL Hash (#store=...) atau localStorage
         function loadStoreData() {
             const hash = window.location.hash;
             if (hash && hash.startsWith('#store=')) {
@@ -706,72 +706,111 @@
                     const parsed = JSON.parse(decodedJson);
                     if (parsed.settings) storeSettings = { ...defaultSettings, ...parsed.settings };
                     if (parsed.products) products = parsed.products;
-                    localStorage.setItem('raya_cookies_settings_shared', JSON.stringify(storeSettings));
-                    localStorage.setItem('raya_cookies_products_shared', JSON.stringify(products));
+                    localStorage.setItem('df_sultan_settings_v1', JSON.stringify(storeSettings));
+                    localStorage.setItem('df_sultan_products_v1', JSON.stringify(products));
                     return;
                 } catch (e) {
                     console.warn('Gagal membaca parameter toko dari URL:', e);
                 }
             }
 
-            const savedSettings = localStorage.getItem('raya_cookies_settings_shared');
-            const savedProducts = localStorage.getItem('raya_cookies_products_shared');
-
-            storeSettings = savedSettings ? { ...defaultSettings, ...JSON.parse(savedSettings) } : { ...defaultSettings };
-            products = savedProducts ? JSON.parse(savedProducts) : [...defaultProducts];
+            try {
+                const savedSettings = localStorage.getItem('df_sultan_settings_v1');
+                const savedProducts = localStorage.getItem('df_sultan_products_v1');
+                storeSettings = savedSettings ? { ...defaultSettings, ...JSON.parse(savedSettings) } : { ...defaultSettings };
+                products = savedProducts ? JSON.parse(savedProducts) : [...defaultProducts];
+            } catch (e) {
+                storeSettings = { ...defaultSettings };
+                products = [...defaultProducts];
+            }
         }
 
         // Simpan dan langsung sinkronkan ke tampilan publik & link
         function syncAllData(showUpdatedBadge = true) {
-            localStorage.setItem('raya_cookies_settings_shared', JSON.stringify(storeSettings));
-            localStorage.setItem('raya_cookies_products_shared', JSON.stringify(products));
+            try {
+                localStorage.setItem('df_sultan_settings_v1', JSON.stringify(storeSettings));
+                localStorage.setItem('df_sultan_products_v1', JSON.stringify(products));
+            } catch (err) {
+                showToast('Memori browser penuh, klik "Simpan Permanen (Unduh HTML)" untuk menyimpan foto!', 'error');
+            }
             
-            // Langsung perbarui tampilan halaman publik di file yang sama
             applyStoreSettings();
             renderPublicProducts();
             renderOrderRows();
             refreshGeneratedIndexLink(showUpdatedBadge);
         }
 
+        function refreshGeneratedIndexLink(highlight = false) {
+            const shareUrl = buildCustomerUrlWithPayload();
+            const linkInput = document.getElementById('generated-index-link');
+            const badge = document.getElementById('link-updated-badge');
+
+            if (linkInput) linkInput.value = shareUrl;
+
+            if (highlight && badge) {
+                badge.classList.remove('hidden');
+                clearTimeout(window.linkBadgeTimeout);
+                window.linkBadgeTimeout = setTimeout(() => {
+                    badge.classList.add('hidden');
+                }, 4000);
+            }
+        }
+
         // =====================================================================
-        // NAVIGASI ANTARA HALAMAN PEMESANAN & MODE ADMIN (1 FILE)
+        // NAVIGASI ANTARA HALAMAN PEMESANAN & MODE ADMIN
         // =====================================================================
         function openAdminAccess() {
             if (isAdminAuthenticated) {
                 switchToAdminView();
             } else {
-                document.getElementById('pin-login-input').value = '';
+                const pinInput = document.getElementById('pin-login-input');
+                if (pinInput) pinInput.value = '';
                 const modal = document.getElementById('admin-pin-modal');
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                setTimeout(() => document.getElementById('pin-login-input').focus(), 100);
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    setTimeout(() => { if (pinInput) pinInput.focus(); }, 100);
+                }
             }
         }
 
         function closeAdminPinModal() {
             const modal = document.getElementById('admin-pin-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        function fillDefaultPinAndLogin() {
+            const savedPin = localStorage.getItem('df_sultan_admin_pin') || '1234';
+            const pinInput = document.getElementById('pin-login-input');
+            if (pinInput) pinInput.value = savedPin;
+            isAdminAuthenticated = true;
+            closeAdminPinModal();
+            switchToAdminView();
+            showToast('Berhasil masuk ke Mode Admin!', 'success');
         }
 
         function verifyAdminPin(event) {
             event.preventDefault();
             const entered = document.getElementById('pin-login-input').value.trim();
-            const savedPin = localStorage.getItem('raya_cookies_admin_pin') || '1234';
+            const savedPin = localStorage.getItem('df_sultan_admin_pin') || '1234';
 
             if (entered === savedPin) {
                 isAdminAuthenticated = true;
                 closeAdminPinModal();
                 switchToAdminView();
-                showToast('Selamat datang di Mode Admin!', 'success');
+                showToast('Selamat datang di Mode Admin DF Sultan!', 'success');
             } else {
-                showToast('PIN Admin salah! Coba lagi.', 'error');
+                showToast('PIN Admin salah! Gunakan PIN default 1234.', 'error');
             }
         }
 
         function switchToAdminView() {
             populateProfileForm();
             renderAdminProducts();
+            switchAdminTab('products');
             refreshGeneratedIndexLink(false);
             document.getElementById('public-view').classList.add('hidden');
             document.getElementById('admin-view').classList.remove('hidden');
@@ -800,7 +839,7 @@
                 showToast('PIN minimal 4 karakter.', 'error');
                 return;
             }
-            localStorage.setItem('raya_cookies_admin_pin', newPin);
+            localStorage.setItem('df_sultan_admin_pin', newPin);
             document.getElementById('new-admin-pin').value = '';
             showToast('PIN Admin berhasil diperbarui!', 'success');
         }
@@ -822,8 +861,8 @@
             const navLogoContainer = document.getElementById('nav-logo-container');
             const heroLogoWrapper = document.getElementById('hero-logo-wrapper');
             if (storeSettings.logoUrl && storeSettings.logoUrl.trim() !== '') {
-                navLogoContainer.innerHTML = `<img src="${storeSettings.logoUrl}" alt="Logo" class="w-full h-full object-cover">`;
-                heroLogoWrapper.innerHTML = `<img src="${storeSettings.logoUrl}" alt="Logo Toko" class="w-full h-full object-cover">`;
+                navLogoContainer.innerHTML = `<img src="${storeSettings.logoUrl}" alt="" onerror="this.parentElement.innerHTML='<i class=\\'fa-solid fa-moon text-lg\\'></i>'" class="w-full h-full object-cover">`;
+                heroLogoWrapper.innerHTML = `<img src="${storeSettings.logoUrl}" alt="" onerror="this.parentElement.innerHTML='<i class=\\'fa-solid fa-star-and-crescent text-3xl sm:text-4xl text-goldRaya-400\\'></i>'" class="w-full h-full object-cover">`;
             } else {
                 navLogoContainer.innerHTML = `<i class="fa-solid fa-moon text-lg"></i>`;
                 heroLogoWrapper.innerHTML = `<i class="fa-solid fa-star-and-crescent text-3xl sm:text-4xl text-goldRaya-400"></i>`;
@@ -832,6 +871,7 @@
             const bannerWrapper = document.getElementById('hero-bg-image-wrapper');
             const bannerImg = document.getElementById('hero-bg-image');
             if (storeSettings.bannerUrl && storeSettings.bannerUrl.trim() !== '') {
+                bannerImg.style.display = 'block';
                 bannerImg.src = storeSettings.bannerUrl;
                 bannerWrapper.classList.remove('hidden');
             } else {
@@ -895,7 +935,7 @@
                             <span class="text-[11px] text-stone-400 block">Harga</span>
                             <span class="text-lg sm:text-xl font-bold text-emeraldRaya-800">${formatRupiah(item.price)}</span>
                         </div>
-                        <button onclick="addProductToOrderForm('${item.id}')" class="px-4 py-2.5 rounded-xl bg-emeraldRaya-50 hover:bg-emeraldRaya-800 text-emeraldRaya-800 hover:text-white font-semibold text-xs sm:text-sm border border-emeraldRaya-200 hover:border-emeraldRaya-800 transition flex items-center gap-1.5">
+                        <button type="button" onclick="addProductToOrderForm('${item.id}')" class="px-4 py-2.5 rounded-xl bg-emeraldRaya-50 hover:bg-emeraldRaya-800 text-emeraldRaya-800 hover:text-white font-semibold text-xs sm:text-sm border border-emeraldRaya-200 hover:border-emeraldRaya-800 transition flex items-center gap-1.5">
                             <i class="fa-solid fa-plus"></i> Pilih Kue
                         </button>
                     </div>
@@ -1134,37 +1174,68 @@ Mohon konfirmasi ketersediaan & total pembayarannya ya. Terima kasih! 🙏`;
         function buildCustomerUrlWithPayload() {
             const baseUrl = window.location.href.split('#')[0];
             try {
-                const compactProducts = products.map(p => ({
-                    ...p,
-                    image: p.image && p.image.startsWith('data:') ? '' : p.image
-                }));
-                const compactSettings = {
-                    ...storeSettings,
-                    logoUrl: storeSettings.logoUrl && storeSettings.logoUrl.startsWith('data:') ? '' : storeSettings.logoUrl,
-                    bannerUrl: storeSettings.bannerUrl && storeSettings.bannerUrl.startsWith('data:') ? '' : storeSettings.bannerUrl
-                };
-                const payload = JSON.stringify({ settings: compactSettings, products: compactProducts });
+                const payload = JSON.stringify({ settings: storeSettings, products: products });
                 const encoded = btoa(unescape(encodeURIComponent(payload)));
-                if (encoded.length < 7500) {
+                if (encoded.length < 32000) {
                     return `${baseUrl}#store=${encoded}`;
                 }
+
+                const lightProducts = products.map(p => ({
+                    ...p,
+                    image: p.image && p.image.length > 6000 ? '' : p.image
+                }));
+                const lightSettings = {
+                    ...storeSettings,
+                    bannerUrl: storeSettings.bannerUrl && storeSettings.bannerUrl.length > 6000 ? '' : storeSettings.bannerUrl
+                };
+                const lightPayload = JSON.stringify({ settings: lightSettings, products: lightProducts });
+                const lightEncoded = btoa(unescape(encodeURIComponent(lightPayload)));
+                return `${baseUrl}#store=${lightEncoded}`;
             } catch (e) {}
             return baseUrl;
         }
 
-        function refreshGeneratedIndexLink(highlight = false) {
-            const shareUrl = buildCustomerUrlWithPayload();
-            const linkInput = document.getElementById('generated-index-link');
-            const badge = document.getElementById('link-updated-badge');
+        // Ekspor file HTML mandiri terbaru dengan seluruh foto dan pengaturan tertanam permanen
+        function exportUpdatedHtmlFile() {
+            try {
+                // Pastikan tampilan publik aktif saat serialisasi agar file unduhan langsung terbuka pada tampilan pembeli
+                const wasAdminOpen = !document.getElementById('admin-view').classList.contains('hidden');
+                if (wasAdminOpen) {
+                    document.getElementById('admin-view').classList.add('hidden');
+                    document.getElementById('public-view').classList.remove('hidden');
+                }
 
-            if (linkInput) linkInput.value = shareUrl;
+                let htmlContent = document.documentElement.outerHTML;
 
-            if (highlight && badge) {
-                badge.classList.remove('hidden');
-                clearTimeout(window.linkBadgeTimeout);
-                window.linkBadgeTimeout = setTimeout(() => {
-                    badge.classList.add('hidden');
-                }, 4000);
+                if (wasAdminOpen) {
+                    document.getElementById('public-view').classList.add('hidden');
+                    document.getElementById('admin-view').classList.remove('hidden');
+                }
+
+                const serializedProducts = JSON.stringify(products, null, 4);
+                const serializedSettings = JSON.stringify(storeSettings, null, 4);
+
+                htmlContent = htmlContent.replace(
+                    /const defaultProducts = \[[\s\S]*?\];/,
+                    `const defaultProducts = ${serializedProducts};`
+                );
+                htmlContent = htmlContent.replace(
+                    /const defaultSettings = \{[\s\S]*?\};/,
+                    `const defaultSettings = ${serializedSettings};`
+                );
+
+                const blob = new Blob(['<!DOCTYPE html>\n' + htmlContent], { type: 'text/html;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'index.html';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                showToast('File index.html terbaru lengkap dengan semua foto permanen berhasil diunduh!', 'success');
+            } catch (err) {
+                showToast('Gagal mengunduh file HTML.', 'error');
             }
         }
 
@@ -1196,6 +1267,7 @@ Mohon konfirmasi ketersediaan & total pembayarannya ya. Terima kasih! 🙏`;
             document.getElementById('edit-logo-url').value = storeSettings.logoUrl || '';
             document.getElementById('edit-banner-url').value = storeSettings.bannerUrl || '';
             updateLogoPreview(storeSettings.logoUrl || '');
+            updateBannerPreview(storeSettings.bannerUrl || '');
         }
 
         function saveFullStoreProfile(event) {
@@ -1210,7 +1282,7 @@ Mohon konfirmasi ketersediaan & total pembayarannya ya. Terima kasih! 🙏`;
             storeSettings.bannerUrl = document.getElementById('edit-banner-url').value.trim();
 
             syncAllData(true);
-            showToast('Semua perubahan profil, bio & logo berhasil disimpan!', 'success');
+            showToast('Semua perubahan profil, bio, logo & gambar berhasil disimpan!', 'success');
         }
 
         function handleImageUpload(event, targetInputId, previewBoxId) {
@@ -1222,7 +1294,7 @@ Mohon konfirmasi ketersediaan & total pembayarannya ya. Terima kasih! 🙏`;
                 const img = new Image();
                 img.onload = function() {
                     const canvas = document.createElement('canvas');
-                    const maxDim = 800;
+                    const maxDim = previewBoxId === 'preview-logo-box' ? 260 : 540;
                     let w = img.width;
                     let h = img.height;
                     if (w > maxDim || h > maxDim) {
@@ -1238,13 +1310,19 @@ Mohon konfirmasi ketersediaan & total pembayarannya ya. Terima kasih! 🙏`;
                     canvas.height = h;
                     const ctx = canvas.getContext('2d');
                     ctx.drawImage(img, 0, 0, w, h);
-                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.8);
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.72);
 
-                    document.getElementById(targetInputId).value = compressedDataUrl;
+                    const inputEl = document.getElementById(targetInputId);
+                    if (inputEl) inputEl.value = compressedDataUrl;
+
                     if (previewBoxId === 'preview-logo-box') {
                         updateLogoPreview(compressedDataUrl);
+                    } else if (previewBoxId === 'preview-banner-box') {
+                        updateBannerPreview(compressedDataUrl);
+                    } else if (previewBoxId === 'preview-prod-box') {
+                        updateProductImgPreview(compressedDataUrl);
                     }
-                    showToast('Gambar berhasil dimuat!', 'success');
+                    showToast('Foto berhasil diunggah & siap disimpan permanen!', 'success');
                 };
                 img.src = e.target.result;
             };
@@ -1255,15 +1333,42 @@ Mohon konfirmasi ketersediaan & total pembayarannya ya. Terima kasih! 🙏`;
             const box = document.getElementById('preview-logo-box');
             if (!box) return;
             if (url && url.trim() !== '') {
-                box.innerHTML = `<img src="${url}" alt="Preview Logo" class="w-full h-full object-cover">`;
+                box.innerHTML = `<img src="${url}" alt="" class="w-full h-full object-cover">`;
             } else {
                 box.innerHTML = `<i class="fa-solid fa-moon text-2xl"></i>`;
             }
         }
 
+        function updateBannerPreview(url) {
+            const box = document.getElementById('preview-banner-box');
+            if (!box) return;
+            if (url && url.trim() !== '') {
+                box.innerHTML = `<img src="${url}" alt="" class="w-full h-full object-cover">`;
+                box.classList.remove('hidden');
+            } else {
+                box.innerHTML = '';
+                box.classList.add('hidden');
+            }
+        }
+
+        function updateProductImgPreview(url) {
+            const box = document.getElementById('preview-prod-box');
+            if (!box) return;
+            if (url && url.trim() !== '') {
+                box.innerHTML = `<img src="${url}" alt="" class="w-full h-full object-cover">`;
+                box.classList.remove('hidden');
+            } else {
+                box.innerHTML = '';
+                box.classList.add('hidden');
+            }
+        }
+
         function clearImageField(inputId, previewBoxId, type) {
-            document.getElementById(inputId).value = '';
+            const inputEl = document.getElementById(inputId);
+            if (inputEl) inputEl.value = '';
             if (type === 'logo') updateLogoPreview('');
+            if (type === 'banner') updateBannerPreview('');
+            if (type === 'product') updateProductImgPreview('');
         }
 
         function renderAdminProducts() {
@@ -1289,10 +1394,10 @@ Mohon konfirmasi ketersediaan & total pembayarannya ya. Terima kasih! 🙏`;
                         </div>
                     </div>
                     <div class="px-5 pb-5 pt-3 border-t border-stone-100 flex gap-2">
-                        <button onclick="openProductModal('${item.id}')" class="flex-1 py-2 rounded-xl bg-amber-100 hover:bg-amber-500 text-amber-800 hover:text-white font-semibold text-xs transition flex items-center justify-center gap-1.5">
+                        <button type="button" onclick="openProductModal('${item.id}')" class="flex-1 py-2 rounded-xl bg-amber-100 hover:bg-amber-500 text-amber-800 hover:text-white font-semibold text-xs transition flex items-center justify-center gap-1.5">
                             <i class="fa-solid fa-pen"></i> Edit Kue
                         </button>
-                        <button onclick="confirmDeleteProduct('${item.id}')" class="px-3.5 py-2 rounded-xl bg-red-100 hover:bg-red-600 text-red-600 hover:text-white font-semibold text-xs transition" title="Hapus Kue">
+                        <button type="button" onclick="confirmDeleteProduct('${item.id}')" class="px-3.5 py-2 rounded-xl bg-red-100 hover:bg-red-600 text-red-600 hover:text-white font-semibold text-xs transition" title="Hapus Kue">
                             <i class="fa-solid fa-trash"></i>
                         </button>
                     </div>
@@ -1308,6 +1413,7 @@ Mohon konfirmasi ketersediaan & total pembayarannya ya. Terima kasih! 🙏`;
 
             form.reset();
             document.getElementById('edit-product-id').value = '';
+            updateProductImgPreview('');
 
             if (productId) {
                 const product = products.find(p => p.id === productId);
@@ -1321,6 +1427,7 @@ Mohon konfirmasi ketersediaan & total pembayarannya ya. Terima kasih! 🙏`;
                     document.getElementById('prod-badge').value = product.badge || '';
                     document.getElementById('prod-image').value = product.image || '';
                     document.getElementById('prod-desc').value = product.desc;
+                    updateProductImgPreview(product.image || '');
                 }
             } else {
                 title.textContent = 'Post Kue Kering Baru';
@@ -1393,7 +1500,7 @@ Mohon konfirmasi ketersediaan & total pembayarannya ya. Terima kasih! 🙏`;
             products = [...defaultProducts];
             syncAllData(true);
             renderAdminProducts();
-            showToast('Katalog dikembalikan ke data contoh awal.', 'info');
+            showToast('Katalog dikembalikan ke data default DF Sultan.', 'info');
         }
 
         function formatRupiah(angka) {
