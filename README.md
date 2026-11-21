@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berkah Raya Cookies - Pemesanan Kue Kering Idul Fitri</title>
+    <title>DF Sultan - Pemesanan Kue Kering Idul Fitri</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
